@@ -1,0 +1,6 @@
+.QuizContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
