@@ -1,50 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .QuizMain {
     text-align: center;
-    font-family: Arial, sans-serif;
     width: 100%;
+    height: 100vh;
     box-sizing: border-box;
-  }
-  
-  .QuizMain-header {
+    background-color: #f4f4f9;
+    /* Body 배경색 설정 */
+    display: flex;
+    flex-direction: column;
+}
+
+.QuizMain-header {
     width: 100%;
-    background-color: #4a90e2;
+    background-color: #d9d9d9;
     padding: 40px;
-    color: white;
+    color: black;
     position: relative;
     box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .QuizMain-title {
+}
+
+.QuizMain-title {
     margin: 0;
     font-size: 2em;
-  }
-  
-  .QuizMain-info {
+}
+
+.QuizMain-info {
     position: absolute;
     bottom: 10px;
     right: 30px;
     margin: 0;
     font-size: 1em;
-  }
-  
-  .QuizMain-main {
-    background-color: #f4f4f9;
+}
+
+.QuizMain-main {
+    flex: 1;
+    /* 남은 공간을 모두 채우도록 설정 */
+    background-color: transparent;
+    /* 배경색을 투명하게 설정 */
     color: #333;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 8px;
+    margin: 40px auto;
+    /* 상단과 하단의 margin을 40px로 설정 */
+    padding: 40px;
+    border-radius: 12px;
     width: 80%;
     box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid #ddd;
-  }
-  
-  .Quiz {
-    border: 2px solid #4a90e2;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
+}
+
+.QuizMain-background {
+    flex: 1;
+    /* 남은 공간을 모두 채우도록 설정 */
+    background-color: #f4f4f9;
+    /* 배경색을 설정 */
+}
+
+.QuizContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
