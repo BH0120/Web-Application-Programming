@@ -1,6 +1,7 @@
 import React from 'react';
-import Quiz01 from "./quiz01/Quiz01"
 import QuizMain from './QuizMain';
+
+
 // import Page1 from "./Page1";
 // import Page2 from "./Page2";
 // import Page3 from "./Page3";
@@ -14,9 +15,7 @@ function App() {
     //   <Route path='/page3' element={<Page3 />} />
     // </Routes>
     <>
-      <QuizMain>
-        <Quiz01/>
-      </QuizMain>
+      <QuizMain/>
     </>
   );
 }

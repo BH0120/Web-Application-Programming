@@ -1,5 +1,6 @@
 import React from 'react';
 import './QuizMain.css';
+// import Test from './quiz01/Test';
 import Quiz01 from './quiz01/Quiz01';
 
 

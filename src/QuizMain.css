@@ -45,7 +45,7 @@ body {
     color: #333;
     margin: 40px auto;
     /* 상단과 하단의 margin을 40px로 설정 */
-    padding: 40px;
+    padding: auto;
     border-radius: 12px;
     width: 80%;
     box-sizing: border-box;
@@ -60,9 +60,3 @@ body {
     /* 배경색을 설정 */
 }
 
-.QuizContainer {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    align-items: center;
-    justify-content: center;
-}
