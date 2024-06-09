@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap');
+
 body {
     margin: 0;
     padding: 0;
+    
 }
+
 
 .QuizMain {
     text-align: center;
@@ -9,7 +13,6 @@ body {
     height: 100vh;
     box-sizing: border-box;
     background-color: #f4f4f9;
-    /* Body 배경색 설정 */
     display: flex;
     flex-direction: column;
 }
@@ -17,16 +20,19 @@ body {
 .QuizMain-header {
     width: 100%;
     background-color: #d9d9d9;
-    padding: 40px;
+    padding: 30px;
     color: black;
     position: relative;
     box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: "Hahmlet", serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .QuizMain-title {
     margin: 0;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .QuizMain-info {
@@ -39,12 +45,9 @@ body {
 
 .QuizMain-main {
     flex: 1;
-    /* 남은 공간을 모두 채우도록 설정 */
     background-color: transparent;
-    /* 배경색을 투명하게 설정 */
     color: #333;
-    margin: 40px auto;
-    /* 상단과 하단의 margin을 40px로 설정 */
+    margin: 25px auto;
     padding: auto;
     border-radius: 12px;
     width: 80%;
@@ -55,8 +58,6 @@ body {
 
 .QuizMain-background {
     flex: 1;
-    /* 남은 공간을 모두 채우도록 설정 */
     background-color: #f4f4f9;
-    /* 배경색을 설정 */
 }
 
