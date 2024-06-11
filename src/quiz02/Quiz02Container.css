@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap');
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.quiz02-container {
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 5px;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.quiz02-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.answer-box-wrapper {
+  position: relative;
+}
+
+.answer-box {
+  padding: 5px;
+  width: 150px;
+  height: 40px; /* Increased height for better visibility */
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  font-size: large;
+  font-family: transparent;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.clear-button, .submit-button {
+  width: 30px;
+  height: 50%;
+  font-size: 16px;
+  border: 1px solid #000;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.clear-button {
+  border-bottom: none;
+  border-top-right-radius: 5px;
+}
+.submit-button {
+  border-bottom-right-radius: 5px;
+}
+
+.answer02-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-size: x-large;
+  font-weight: bolder;
+  border: 2px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.answer-button{
+  border: 1px solid #ddd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

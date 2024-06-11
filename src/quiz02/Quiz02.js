@@ -18,7 +18,12 @@ function Quiz02(props) {
 
   return (
     <>
+      <h2>
+        Q. 아래 보기는 숫자를 한문으로 표기한 것입니다. <br />
+        예시를 보며 계산 문제를 풀어보세요.
+      </h2>
       <SampleContainer samples={samples} />
+
       <Quiz02Container samples={samples} />
     </>
   );

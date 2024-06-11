@@ -53,8 +53,12 @@ function Quiz01() {
   }, []);
 
   function generateQuiz() {
+    //img 중에 랜덤으로 가져옴
     const randomImage = images[Math.floor(Math.random() * images.length)];
+    //
     const { optionImages, rotatedImage, correctDeg } = generateRandomOptions(randomImage);
+    
+    //각각 useState를 사용해서 현재 이미지, 문제 이미지, 각도를
     setCurrentImage(randomImage);
     setOptions(optionImages);
     setCorrectOption(rotatedImage);
