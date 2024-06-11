@@ -2,6 +2,7 @@ import React from 'react';
 import './QuizMain.css';
 // import Test from './quiz01/Test';
 import Quiz01 from './quiz01/Quiz01';
+import Quiz02 from './quiz02/Quiz02';
 
 
 function QuizMain() {
@@ -13,7 +14,7 @@ function QuizMain() {
         <p className="QuizMain-info">20191122 고병현</p>
       </header>
       <main className="QuizMain-main">
-        <Quiz01 />
+        <Quiz02 />
       </main>
     </div>
   );

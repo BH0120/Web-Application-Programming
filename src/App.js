@@ -1,5 +1,6 @@
 import React from 'react';
 import QuizMain from './QuizMain';
+import Quiz02 from './quiz02/Quiz02';
 
 
 // import Page1 from "./Page1";
@@ -16,6 +17,7 @@ function App() {
     // </Routes>
     <>
       <QuizMain/>
+      {/* <Quiz02/> */}
     </>
   );
 }
