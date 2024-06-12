@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './QuizMain.css';
 // import Test from './quiz01/Test';
-import Quiz01 from './quiz01/Quiz01';
-import Quiz02 from './quiz02/Quiz02';
+import Quiz04 from './quiz04/Quiz04';
+import Quiz05 from './quiz05/Quiz05';
+import Quiz06 from './quiz06/Quiz06';
+
 
 
 function QuizMain() {
+  const[quizNum, setQuizNum] = useState("Quiz04");
   return (
     <div className="QuizMain">
       <header className="QuizMain-header">
@@ -14,7 +17,8 @@ function QuizMain() {
         <p className="QuizMain-info">20191122 고병현</p>
       </header>
       <main className="QuizMain-main">
-        <Quiz02 />
+        <Quiz05/>
+        {/* {`<${quizNum}/>`} */}
       </main>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Quiz01.css";
+import "./Quiz04.css";
 import { FaArrowRotateRight } from "react-icons/fa6";
 import Swal from "sweetalert2";
 

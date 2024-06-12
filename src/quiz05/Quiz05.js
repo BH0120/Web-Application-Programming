@@ -1,8 +1,8 @@
 import React from "react";
 import SampleContainer from "./SampleContainer";
-import Quiz02Container from "./Quiz02Container";
+import Quiz05Container from "./Quiz05Container";
 
-function Quiz02(props) {
+function Quiz05(props) {
   const samples = [
     { char: "一", value: 1 },
     { char: "二", value: 2 },
@@ -24,9 +24,9 @@ function Quiz02(props) {
       </h2>
       <SampleContainer samples={samples} />
 
-      <Quiz02Container samples={samples} />
+      <Quiz05Container samples={samples} />
     </>
   );
 }
 
-export default Quiz02;
+export default Quiz05;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import "./Quiz02Container.css";
+import "./Quiz05Container.css";
 
-function Quiz02Container(props) {
+function Quiz05Container(props) {
   const samples = props.samples;
   const [quiz, setQuiz] = useState({});
   const [answer, setAnswer] = useState("");
@@ -117,8 +117,8 @@ function Quiz02Container(props) {
 
   return (
     <>
-      <div className="quiz02-container">
-        <div className="quiz02-div">
+      <div className="quiz05-container">
+        <div className="quiz05-div">
           {changeIntToChn(quiz.num1)} + {changeIntToChn(quiz.num2)} - {changeIntToChn(quiz.num3)} =
           <div className="input-container">
             <input type="text" value={answer} readOnly className="answer-box" />
@@ -134,7 +134,7 @@ function Quiz02Container(props) {
         </div>
       </div>
       <h2 style={{marginTop:"1rem",marginBottom:0, textAlign:"left"}}>입력</h2>
-      <div className="answer02-container">
+      <div className="answer05-container">
         {samples.map((item) => (
           <div
             key={item.value}
@@ -149,4 +149,4 @@ function Quiz02Container(props) {
   );
 }
 
-export default Quiz02Container;
+export default Quiz05Container;

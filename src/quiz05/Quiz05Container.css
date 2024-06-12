@@ -7,7 +7,7 @@
   gap: 20px;
 }
 
-.quiz02-container {
+.quiz05-container {
   background-color: #e0e0e0;
   padding: 20px;
   border-radius: 10px;
@@ -19,7 +19,7 @@
   font-weight: bolder;
 }
 
-.quiz02-div {
+.quiz05-div {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -74,7 +74,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.answer02-container {
+.answer05-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   font-size: x-large;
