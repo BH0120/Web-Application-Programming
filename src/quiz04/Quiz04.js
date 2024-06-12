@@ -40,7 +40,7 @@ function generateRandomOptions(randomImage) {
   return { optionImages, rotatedImage, correctDeg};
 }
 
-function Quiz01() {
+function Quiz04(props) {
   const [currentImage, setCurrentImage] = useState(null);
   const [options, setOptions] = useState([]);
   const [correctOption, setCorrectOption] = useState(null);
@@ -66,38 +66,43 @@ function Quiz01() {
   }
 
   function checkAnswer(selectedOption) {
+  setCount((prevCount) => {
+    const newCount = prevCount + 1;
+    let updatedScore = score;
+
     if (selectedOption.class === correctOption.class) {
-      setScore((prevScore) => (prevScore + 1));
+      updatedScore += 1;
+      setScore(updatedScore);
       Swal.fire({
         icon: "success",
         title: "정답입니다!",
         showConfirmButton: false,
         timer: 1500
       });
-    } 
-    else {
+    } else {
       Swal.fire({
-        icon:'error',
+        icon: 'error',
         text: '오답입니다. :(',
         showConfirmButton: false,
         timer: 1500
-      })
+      });
     }
 
-    setCount((prevCount) => {
-      if(prevCount + 1 === 5){
-        Swal.fire({
-          title: `점수`,
-          text: `${score} / ${count+1}`
-        })
-        setScore(0);
-        setCount(0);
-      } else {
-        generateQuiz();
-        return prevCount + 1;
-      }
-    })
-  }
+    if (newCount === 5) {
+      Swal.fire({
+        title: `점수`,
+        text: `${updatedScore} / 5`
+      });
+      setScore(0);
+      setCount(0);
+      generateQuiz();
+    } else {
+      generateQuiz();
+    }
+
+    return newCount;
+  });
+}
 
   return (
     <div className="quiz-container">
@@ -128,4 +133,4 @@ function Quiz01() {
   );
 }
 
-export default Quiz01;
+export default Quiz04;

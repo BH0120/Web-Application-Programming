@@ -10,10 +10,10 @@
     overflow: hidden; /* 추가된 속성 */
   }
   
-  .img {
+  .img06 {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
   
   .start-img {

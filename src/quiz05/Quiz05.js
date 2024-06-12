@@ -24,7 +24,7 @@ function Quiz05(props) {
       </h2>
       <SampleContainer samples={samples} />
 
-      <Quiz05Container samples={samples} />
+      <Quiz05Container samples={samples} setQuizNum={props.setQuizNum} />
     </>
   );
 }

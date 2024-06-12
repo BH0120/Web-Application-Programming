@@ -22,9 +22,9 @@ function Quiz05Container(props) {
     function randomNum() {
       // 중복 없을 때까지 실행
       do {
-        num1 = Math.floor(Math.random() * 100 + 1);
-        num2 = Math.floor(Math.random() * 100 + 1);
-        num3 = Math.floor(Math.random() * 100 + 1);
+        num1 = Math.floor(Math.random() * 99 + 1);
+        num2 = Math.floor(Math.random() * 99 + 1);
+        num3 = Math.floor(Math.random() * 99 + 1);
       } while (num1 === num2 || num2 === num3 || num3 === num1);
 
       total = num1 + num2 - num3;
@@ -81,8 +81,10 @@ function Quiz05Container(props) {
   }
 
   function handleSubmit() {
+    let newScore = score;
     if (answer === correct) {
-      setScore(score + 1);
+      newScore += 1;
+      setScore(newScore);
       Swal.fire({
         icon: "success",
         title: "정답입니다!",
@@ -91,28 +93,31 @@ function Quiz05Container(props) {
       });
     } else {
       Swal.fire({
-        icon:'error',
+        icon: 'error',
         text: '오답입니다. :(',
         showConfirmButton: false,
         timer: 1500
-      })
+      });
     }
-
-    setCount((prev) => {
-      if(prev + 1 === 5){
+  
+    setCount((prevCount) => {
+      const newCount = prevCount + 1;
+      if (newCount === 5) {
         Swal.fire({
           title: `점수`,
-          text: `${score} / ${count+1}`
-        })
-        setScore(0);
-        setCount(0);
-        setAnswer("");
+          text: `${newScore} / 5`,
+          confirmButtonText: '확인'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            props.setQuizNum("Quiz06");  // Change this to the desired next quiz
+          }
+        });
       } else {
-        setAnswer(""); 
-        setQuiz(randomQuiz()); 
-        return prev + 1;
+        setAnswer("");
+        setQuiz(randomQuiz());
       }
-    })
+      return newCount;
+    });
   }
 
   return (
@@ -138,7 +143,7 @@ function Quiz05Container(props) {
         {samples.map((item) => (
           <div
             key={item.value}
-            className="answer-button"
+            className="answer05-button"
             onClick={() => handleChnBtn(item.char)}
           >
             {item.char}

@@ -82,10 +82,19 @@
   border: 2px solid black;
   border-radius: 5px;
   overflow: hidden;
+  box-sizing: border-box;
+
 }
 
-.answer-button{
+.answer05-button{
   border: 1px solid #ddd;
   padding-top: 5px;
   padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.answer05-button:hover {
+  background-color: #e0e0e0;
+  border : 3px solid #007bff;
+  transition: border-color 0.3s;
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 import './Quiz06.css';
 
 // 총 6개의 끝말잇기 세트
@@ -25,7 +26,7 @@ const wordSets = [
     { img: "/imgs/통나무.jpg", word: '통나무' },
     { img: "/imgs/무궁화.jpg", word: '무궁화' },
     { img: "/imgs/화가.jpg", word: '화가' },
-    { img: "/imgs/가수.jpg", word: '가수' }
+    { img: "/imgs/가수.png", word: '가수' }
   ]
 ];
 
@@ -42,41 +43,92 @@ const fixedPositions = [
   { x: 850, y: 150 }
 ];
 
-const getRandomPositions = (fixedPositions, count) => {
+function getRandomPositions(fixedPositions, count) {
   const shuffled = fixedPositions.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
-};
+}
 
-const Quiz06 = () => {
+function Quiz06() {
   const [positions, setPositions] = useState([]);
   const [answers, setAnswers] = useState(Array(6).fill(''));
   const [imageWords, setImageWords] = useState([]);
+  const [usedIdx, setUsedIdx] = useState([]);
+  const [score, setScore] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const randomSet = wordSets[Math.floor(Math.random() * wordSets.length)];
+    generateQuiz();
+  }, []);
+
+  function generateQuiz() {
+    let randomSetIndex;
+
+    do {
+      randomSetIndex = Math.floor(Math.random() * wordSets.length);
+    } while (usedIdx.includes(randomSetIndex) && usedIdx.length < wordSets.length);
+
+    setUsedIdx([...usedIdx, randomSetIndex]);
+    const randomSet = wordSets[randomSetIndex];
     setImageWords(randomSet);
 
     const randomPositions = getRandomPositions(fixedPositions, 5);
-    randomPositions.unshift({ x: 350, y: 200 }); // 첫 번째 이미지는 고정된 위치에
+    randomPositions.unshift({ x: 350, y: 200 }); // 첫 번째 이미지를 고정된 위치에 배치
     setPositions(randomPositions);
-  }, []);
+  }
 
-  const handleInputChange = (index, event) => {
+  function handleInputChange(index, event) {
     const newAnswers = [...answers];
     newAnswers[index] = event.target.value;
     setAnswers(newAnswers);
-  };
+  }
 
-  const checkAnswers = () => {
+  function checkAnswers() {
     const correctAnswers = imageWords.map((item) => item.word);
     const isCorrect = correctAnswers.every((word, index) => word === answers[index]);
 
+    let newScore = score;
     if (isCorrect) {
-      alert('정답입니다!');
+      newScore += 1;
+      setScore(newScore);
+      Swal.fire({
+        icon: 'success',
+        title: '정답입니다!',
+        showConfirmButton: false,
+        timer: 1500
+      });
     } else {
-      alert('틀렸습니다. 다시 시도해주세요.');
+      Swal.fire({
+        icon: 'error',
+        text: '오답입니다. :(',
+        showConfirmButton: false,
+        timer: 1500
+      });
     }
-  };
+
+    setCount((prevCount) => {
+      const newCount = prevCount + 1;
+      if (newCount === 3) {
+        Swal.fire({
+          title: '점수',
+          text: `${newScore} / 3`,
+          confirmButtonText: '확인'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // 퀴즈 리셋 로직
+            setScore(0);
+            setCount(0);
+            setAnswers(Array(6).fill(''));
+            setUsedIdx([]); // 인덱스 배열 초기화
+            generateQuiz();
+          }
+        });
+      } else {
+        setAnswers(Array(6).fill(''));
+        generateQuiz();
+      }
+      return newCount;
+    });
+  }
 
   return (
     <div>
@@ -86,7 +138,7 @@ const Quiz06 = () => {
             key={index}
             src={item.img}
             alt={`img-${index}`}
-            className={`img ${index === 0 ? 'start-img' : ''}`}
+            className={`img06 ${index === 0 ? 'start-img' : ''}`}
             style={{ left: positions[index]?.x, top: positions[index]?.y }}
           />
         ))}
@@ -105,6 +157,6 @@ const Quiz06 = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Quiz06;
