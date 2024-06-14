@@ -132,6 +132,8 @@ function Quiz06() {
 
   return (
     <div>
+      <h2>
+        Q. 사진들의 이름을 떠올리며 끝말잇기로 연결해보세요.(<b style={{color: "red"}}>빨간 테두리</b>가 시작)</h2>
       <div id="quiz06-container">
         {imageWords.map((item, index) => (
           <img
@@ -153,7 +155,7 @@ function Quiz06() {
             onChange={(e) => handleInputChange(index, e)}
           />
         ))}
-        <button className='quiz06-submit-btn' onClick={checkAnswers}>제출</button>
+        <button className='quiz06-submit-btn' onClick={checkAnswers}>정답 확인</button>
       </div>
     </div>
   );
