@@ -108,9 +108,7 @@ function Quiz05Container(props) {
           text: `${newScore} / 5`,
           confirmButtonText: '확인'
         }).then((result) => {
-          if (result.isConfirmed) {
-            props.setQuizNum("Quiz06");  // Change this to the desired next quiz
-          }
+            props.setQuizNum("Quiz06");
         });
       } else {
         setAnswer("");

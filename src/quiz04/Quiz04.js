@@ -91,8 +91,11 @@ function Quiz04(props) {
     if (newCount === 5) {
       Swal.fire({
         title: `점수`,
-        text: `${updatedScore} / 5`
-      });
+        text: `${updatedScore} / 5`,
+          showConfirmButton: true
+        }).then((result) => {
+          props.setQuizNum("Quiz05");
+        })
       setScore(0);
       setCount(0);
       generateQuiz();
