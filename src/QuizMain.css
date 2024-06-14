@@ -72,6 +72,13 @@ body {
     border-color: black;
 }
 
+.quizNum-btn.active {
+    background-color: #f4f4f9;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 4px solid black;
+}
+
 .QuizMain-main {
     flex: 1;
     background-color: transparent;

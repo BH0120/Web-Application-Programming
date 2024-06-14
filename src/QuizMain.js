@@ -26,9 +26,14 @@ function QuizMain() {
           웹사이트
         </p>
         <div className="QuizMain-buttons">
-          <button className="quizNum-btn" onClick={() => setQuizNum("Quiz04")}>Quiz04</button>
-          <button className="quizNum-btn" onClick={() => setQuizNum("Quiz05")}>Quiz05</button>
-          <button className="quizNum-btn" onClick={() => setQuizNum("Quiz06")}>Quiz06</button>
+          <button className={`quizNum-btn ${quizNum === "Quiz04" ? "active" : ""}`}
+              onClick={() => setQuizNum("Quiz04")}> Quiz04</button>
+
+          <button className={`quizNum-btn ${quizNum === "Quiz05" ? "active" : ""}`}
+              onClick={() => setQuizNum("Quiz05")}> Quiz05</button>
+
+          <button 
+              className={`quizNum-btn ${quizNum === "Quiz06" ? "active" : ""}`} onClick={() => setQuizNum("Quiz06")}> Quiz06</button>
         </div>
         <p className="QuizMain-info">20191122 고병현</p>
       </header>
