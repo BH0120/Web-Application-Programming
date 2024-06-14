@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap');
-html{
+html {
     background-color: #f4f4f9;
 }
+
 body {
     margin: 0;
     padding: 0;
-    
 }
-
 
 .QuizMain {
     text-align: center;
@@ -45,6 +44,34 @@ body {
     font-size: 1em;
 }
 
+.QuizMain-buttons {
+    position: absolute;
+    bottom: 1px;
+    left: 30px;
+}
+
+.QuizMain-buttons button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    font-family: "Hahmlet", serif;
+    font-weight: 700;
+    font-size: 1em;
+
+    transition: background-color 0.5s,border-bottom 0.5s;
+}
+
+.quizNum-btn:hover {
+    background-color: #f4f4f9;
+    border-color: black;
+}
+
 .QuizMain-main {
     flex: 1;
     background-color: transparent;
@@ -62,4 +89,3 @@ body {
     flex: 1;
     background-color: #f4f4f9;
 }
-

@@ -37,7 +37,7 @@
     text-align: center; /* 텍스트 가운데 정렬 */
   }
   
-  button {
+  .quiz06-submit-btn {
     margin-left: 10px;
     padding: 5px 10px;
     font-size: 16px;

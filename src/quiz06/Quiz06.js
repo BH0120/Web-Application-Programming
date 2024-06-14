@@ -72,7 +72,7 @@ function Quiz06() {
     setImageWords(randomSet);
 
     const randomPositions = getRandomPositions(fixedPositions, 5);
-    randomPositions.unshift({ x: 350, y: 200 }); // 첫 번째 이미지를 고정된 위치에 배치
+    randomPositions.unshift({ x: 350, y: 200 }); // 첫 번째 이미지를 고정된 위치로 설정
     setPositions(randomPositions);
   }
 
@@ -113,14 +113,14 @@ function Quiz06() {
           text: `${newScore} / 3`,
           confirmButtonText: '확인'
         }).then((result) => {
-          if (result.isConfirmed) {
-            // 퀴즈 리셋 로직
+            /* 
+              메인페이지로 넘기는 로직 구현 필요
+            */
             setScore(0);
             setCount(0);
             setAnswers(Array(6).fill(''));
             setUsedIdx([]); // 인덱스 배열 초기화
             generateQuiz();
-          }
         });
       } else {
         setAnswers(Array(6).fill(''));
@@ -153,7 +153,7 @@ function Quiz06() {
             onChange={(e) => handleInputChange(index, e)}
           />
         ))}
-        <button onClick={checkAnswers}>제출</button>
+        <button className='quiz06-submit-btn' onClick={checkAnswers}>제출</button>
       </div>
     </div>
   );
